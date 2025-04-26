@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HealthModule } from './health/health.module';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { ConverterModule } from './converter/converter.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
         },
       ],
     }),
+    ConverterModule,
   ],
   controllers: [AppController],
   providers: [
