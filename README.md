@@ -25,6 +25,16 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+This project implements a NestJS application designed to process AWS SES notifications received via SNS.
+
+Key features include:
+- **SES/SNS Event Parsing:** Defines TypeScript classes to represent the incoming JSON structure from SES/SNS events (`ses-sns-event.json`).
+- **Data Transformation:** Utilizes `class-transformer` to map and transform the incoming SES/SNS event data into a simplified structure (`response.json`).
+- **API Endpoint:** Exposes a controller endpoint that accepts the raw SES/SNS JSON event and returns the transformed data.
+- **Swagger Documentation:** Integrates Swagger for easy API exploration and testing.
+- **Security:** Uses `helmet` for basic security hardening.
+- **Health Check:** Provides a `/health` endpoint for monitoring application status.
+
 ## Project setup
 
 ```bash
@@ -83,15 +93,6 @@ Check out a few resources that may come in handy when working with NestJS:
 - To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
 - Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
