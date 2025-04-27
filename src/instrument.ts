@@ -1,8 +1,12 @@
 import * as Sentry from '@sentry/nestjs';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
+import { config } from 'dotenv';
+
+// Load environment variables directly for this file
+config();
 
 Sentry.init({
-  dsn: 'https://238ac37f26e6addb625693cc14591122@o4509218056306688.ingest.us.sentry.io/4509218065809408',
+  dsn: process.env.SENTRY_DSN,
   integrations: [nodeProfilingIntegration()],
 
   tracesSampleRate: 1.0,
