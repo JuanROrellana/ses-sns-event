@@ -6,9 +6,10 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { ConverterModule } from './converter/converter.module';
 import { SentryGlobalFilter } from '@sentry/nestjs/setup';
 import { CatchAllExceptionFilter } from './filters/catch-all-exception.filter';
-
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     SentryModule.forRoot(),
     HealthModule,
     ThrottlerModule.forRoot({
