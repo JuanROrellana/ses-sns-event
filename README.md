@@ -67,6 +67,16 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Pre-commit Hooks
+
+This project uses [Husky](https://typicode.github.io/husky/) to manage Git hooks. A pre-commit hook is configured in `.husky/pre-commit` to automatically run the following checks before each commit:
+
+1.  **Unit Tests:** Runs `npm test`.
+2.  **Linter:** Runs `npm run lint`.
+3.  **Build:** Runs `npm run build`.
+
+This helps ensure code quality and prevent committing broken code. If any of these checks fail, the commit will be aborted.
+
 ## Running with Docker
 
 Build the Docker image:
