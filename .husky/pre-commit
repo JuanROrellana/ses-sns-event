@@ -1,0 +1,22 @@
+echo '🏗️👷🏗️👷🏗️👷 Styling and testing your project before committing'
+
+npm test || 
+(
+  echo '🎨🎨🎨 Tests Check Failed';
+  echo 'For more details run `npm run test`.';
+  false;
+)
+
+npm run lint ||
+(
+  echo '🎨🎨🎨 Linter Check Failed';
+  echo 'For more details run `run npm lint`. To automatically fix these errors, run `npm run lint:fix`.';
+  false;
+)
+
+npm run build ||
+(
+  echo '🎨🎨🎨 Build FAILED!';
+  echo 'For more details run `run npm build';
+  false;
+)
